@@ -18,25 +18,21 @@ public class Principal {
      */
     public static void main(String[] args) {
 
-         int a=0;
+        int a = 0;
         do {
-            
-        
-        String texto = JOptionPane.showInputDialog(null,
-                "Areas y figuras geometricas \n"
-                + "=========================== \n"
-                + "1. triangulo \n"
-                + "2. cuadrado \n"
-                + "3. rectangulo \n"
-                + "4. circulo \n"
-                + "5. salir "
-        );
-        a = Integer.parseInt(texto);
-       
-       
 
             //menu
             try {
+                String texto = JOptionPane.showInputDialog(null,
+                        "Areas y figuras geometricas \n"
+                        + "=========================== \n"
+                        + "1. triangulo \n"
+                        + "2. cuadrado \n"
+                        + "3. rectangulo \n"
+                        + "4. circulo \n"
+                        + "5. salir "
+                );
+                a = Integer.parseInt(texto);
 
                 switch (a) {
                     case 1:
@@ -47,7 +43,7 @@ public class Principal {
                                 + "Figura: " + triFigura.getNombreFigura() + "\n"
                                 + "Area : " + triFigura.calcularArea() + "\n"
                                 + "Perimetro : " + triFigura.calcularPerimetro() + "\n");
-
+                        break;
                     case 2:
                         Figura cuFigura = new Cuadrado(4);
                         cuFigura.setNombreFigura("Cuadrado");
@@ -56,6 +52,7 @@ public class Principal {
                                 + "Figura: " + cuFigura.getNombreFigura() + "\n"
                                 + "Area : " + cuFigura.calcularArea() + "\n"
                                 + "Perimetro : " + cuFigura.calcularPerimetro() + "\n");
+                        break;
                     case 3:
                         Figura reFigura = new Rectangulo(4, 5);
                         reFigura.setNombreFigura("Rectangulo");
@@ -64,6 +61,7 @@ public class Principal {
                                 + "Figura: " + reFigura.getNombreFigura() + "\n"
                                 + "Area : " + reFigura.calcularArea() + "\n"
                                 + "Perimetro : " + reFigura.calcularPerimetro() + "\n");
+                        break;
                     case 4:
                         Figura cFigura = new Circulo(6);
                         cFigura.setNombreFigura("Circulo");
@@ -72,6 +70,7 @@ public class Principal {
                                 + "Figura: " + cFigura.getNombreFigura() + "\n"
                                 + "Area : " + cFigura.calcularArea() + "\n"
                                 + "Perimetro : " + cFigura.calcularPerimetro() + "\n");
+                        break;
                     default:
 
                         break;
@@ -81,10 +80,8 @@ public class Principal {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
             }
-             
-            
-            
-        } while (a!=5);
+
+        } while (a != 5);
     }
 
 }
