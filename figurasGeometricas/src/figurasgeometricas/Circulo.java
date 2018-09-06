@@ -5,17 +5,23 @@
  */
 package figurasgeometricas;
 
+import javax.crypto.Mac;
+
 /**
  *
  * @author ESTUDIANTE
  */
-public class Circulo extends Figura{
-    
+public class Circulo extends Figura {
+
     private int radioCirc;
 
     public Circulo(int radioCirc) {
         this.radioCirc = radioCirc;
     }
+
+   
+
+    
 
     public int getRadioCirc() {
         return radioCirc;
@@ -26,19 +32,24 @@ public class Circulo extends Figura{
     }
 
     @Override
-    public void calcularArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calcularArea() {
+        double totalArea = 0;
+        totalArea = Math.PI * Math.pow(radioCirc, 2);
+        return totalArea;
     }
 
     @Override
-    public void calcularPerimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calcularPerimetro() {
+        double totalPerimetro = 0;
+        totalPerimetro = 2 * (Math.PI*radioCirc);
+        return totalPerimetro;
     }
 
     @Override
     public void ejecutarFigura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Figura: " + getNombreFigura() + "\n");
+        System.out.println("Area del " + getNombreFigura() + ": " + calcularArea() + "\n");
+        System.out.println("Perimetro del " + getNombreFigura() + ": " + calcularPerimetro() + "\n");
     }
-    
-    
+
 }

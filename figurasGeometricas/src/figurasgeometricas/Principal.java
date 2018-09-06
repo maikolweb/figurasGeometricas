@@ -5,6 +5,8 @@
  */
 package figurasgeometricas;
 
+import javax.swing.*;
+
 /**
  *
  * @author ESTUDIANTE
@@ -15,7 +17,74 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+         int a=0;
+        do {
+            
+        
+        String texto = JOptionPane.showInputDialog(null,
+                "Areas y figuras geometricas \n"
+                + "=========================== \n"
+                + "1. triangulo \n"
+                + "2. cuadrado \n"
+                + "3. rectangulo \n"
+                + "4. circulo \n"
+                + "5. salir "
+        );
+        a = Integer.parseInt(texto);
+       
+       
+
+            //menu
+            try {
+
+                switch (a) {
+                    case 1:
+                        Figura triFigura = new Triangulo(4, 3, 4, 4, 6);
+                        triFigura.setNombreFigura("Triangulo");
+
+                        JOptionPane.showMessageDialog(null, ""
+                                + "Figura: " + triFigura.getNombreFigura() + "\n"
+                                + "Area : " + triFigura.calcularArea() + "\n"
+                                + "Perimetro : " + triFigura.calcularPerimetro() + "\n");
+
+                    case 2:
+                        Figura cuFigura = new Cuadrado(4);
+                        cuFigura.setNombreFigura("Cuadrado");
+
+                        JOptionPane.showMessageDialog(null, ""
+                                + "Figura: " + cuFigura.getNombreFigura() + "\n"
+                                + "Area : " + cuFigura.calcularArea() + "\n"
+                                + "Perimetro : " + cuFigura.calcularPerimetro() + "\n");
+                    case 3:
+                        Figura reFigura = new Rectangulo(4, 5);
+                        reFigura.setNombreFigura("Rectangulo");
+
+                        JOptionPane.showMessageDialog(null, ""
+                                + "Figura: " + reFigura.getNombreFigura() + "\n"
+                                + "Area : " + reFigura.calcularArea() + "\n"
+                                + "Perimetro : " + reFigura.calcularPerimetro() + "\n");
+                    case 4:
+                        Figura cFigura = new Circulo(6);
+                        cFigura.setNombreFigura("Circulo");
+
+                        JOptionPane.showMessageDialog(null, ""
+                                + "Figura: " + cFigura.getNombreFigura() + "\n"
+                                + "Area : " + cFigura.calcularArea() + "\n"
+                                + "Perimetro : " + cFigura.calcularPerimetro() + "\n");
+                    default:
+
+                        break;
+
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+            }
+             
+            
+            
+        } while (a!=5);
     }
-    
+
 }

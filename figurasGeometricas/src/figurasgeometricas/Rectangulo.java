@@ -36,23 +36,30 @@ public class Rectangulo  extends Figura{
         this.alturaRecta = alturaRecta;
     }
 
-    
-    
-    
     @Override
-    public void calcularArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calcularArea() {
+      double totalArea=0;
+         totalArea=baseRecta*alturaRecta;
+         return totalArea;
     }
 
     @Override
-    public void calcularPerimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calcularPerimetro() {
+        double totalPerimetro=0;
+        totalPerimetro=2*(baseRecta + alturaRecta);
+         return totalPerimetro;
     }
 
     @Override
     public void ejecutarFigura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          System.out.println("Figura: "+getNombreFigura()+"\n");
+          System.out.println("Area del "+getNombreFigura()+": "+calcularArea()+"\n");
+          System.out.println("Perimetro del "+getNombreFigura()+": "+calcularPerimetro()+"\n");
     }
+
+    
+    
+   
     
     
     

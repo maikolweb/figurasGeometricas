@@ -5,6 +5,8 @@
  */
 package figurasgeometricas;
 
+import javax.swing.*;
+
 /**
  *
  * @author ESTUDIANTE
@@ -89,7 +91,12 @@ public class Triangulo extends Figura{
     
       @Override
     public void ejecutarFigura() {
-       
+       JOptionPane.showMessageDialog(null, ""
+               + "Figura: "+getNombreFigura()+ "\n"
+               + "Area del Triangulo: " +calcularArea()+ "\n +"
+               + "Perimetro del Triangulo: "+calcularPerimetro() +"\n");
+        
+      
     }
     
 }
